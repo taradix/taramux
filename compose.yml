@@ -55,6 +55,7 @@ services:
       lesjardinsdudore:
       taralists:
       taramail:
+      taramdj:
       tarameteo:
       taramonit:
       tarawiki:
@@ -84,13 +85,14 @@ services:
       TERM: xterm-256color
       OPENCLAW_GATEWAY_TOKEN: ${OPENCLAW_GATEWAY_TOKEN}
       OPENCLAW_ALLOW_INSECURE_PRIVATE_WS: ${OPENCLAW_ALLOW_INSECURE_PRIVATE_WS:-}
-      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
       TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
       GH_TOKEN: ${GH_TOKEN}
       TZ: ${TZ:-UTC}
     ports:
       - '127.0.0.1:${OPENCLAW_BRIDGE_PORT:-18790}:18790'
       - '127.0.0.1:${OPENCLAW_GATEWAY_PORT:-18789}:18789'
+    user: "1000:1000"
     networks:
       default:
         aliases:
@@ -152,6 +154,9 @@ networks:
   taramail:
     external: true
     name: taramail_default
+  taramdj:
+    external: true
+    name: taramdj_default
   tarameteo:
     external: true
     name: tarameteo_default
