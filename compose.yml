@@ -92,7 +92,6 @@ services:
     ports:
       - '127.0.0.1:${OPENCLAW_BRIDGE_PORT:-18790}:18790'
       - '127.0.0.1:${OPENCLAW_GATEWAY_PORT:-18789}:18789'
-    user: "1000:1000"
     networks:
       default:
         aliases:
@@ -116,6 +115,7 @@ services:
       timeout: 5s
       retries: 5
       start_period: 20s
+    user: "1000:1000"
 
   prometheus:
     image: prom/prometheus:v3.15.1
