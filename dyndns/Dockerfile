@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION=3.14.2
+ARG PYTHON_VERSION=3.15.1
 FROM python:${PYTHON_VERSION}-alpine AS base
 
 RUN apk add --no-cache \
