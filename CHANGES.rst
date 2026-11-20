@@ -9,4 +9,3 @@ Released 2026-04-20
 -   Add HAProxy service.
 -   Add Mailman service.
 -   Add Meteo service.
--   Add OpenClaw service.
