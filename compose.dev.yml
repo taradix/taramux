@@ -1,3 +1,29 @@
-name: taramux
+name: taramux-test
 include:
   - path: ./taracert/compose.dev.yml
+
+# Isolate dev and tests from a real taramux deployment and its sibling networks.
+networks:
+  default:
+    driver_opts: !reset {}
+  lesjardinsdudore:
+    external: false
+    name: !reset null
+  taralists:
+    external: false
+    name: !reset null
+  taramail:
+    external: false
+    name: !reset null
+  taramdj:
+    external: false
+    name: !reset null
+  tarameteo:
+    external: false
+    name: !reset null
+  taramonit:
+    external: false
+    name: !reset null
+  tarawiki:
+    external: false
+    name: !reset null
